@@ -1,5 +1,5 @@
+
+game.Players.LocalPlayer.Name = "9Saitama9"
 return {
-    ["GamingStar6271"] = true,
-    ["9Saitama9"] = true,
-    ["Hard_GamerReal"] = true,
+["9Saitama9"] true,
 }
