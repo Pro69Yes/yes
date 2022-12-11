@@ -1,0 +1,302 @@
+--Every Button
+
+-------------------------------------------------------Library------------------------------------------------------------------
+local q = loadstring(game:HttpGet("https://pastebin.com/raw/RmLqTugH"))()
+-------------------------------------------------------Gui-----------------------------------------------------------------------------
+local r = q.CreateLib("Crazy | ","Serpent")
+local s = Instance.new("ScreenGui")
+local t = Instance.new("TextButton")s.Name="Gui"s.Parent=game.CoreGui;t.Name="UIToggle"t.Parent=s;t.BackgroundColor3=Color3.fromRGB(24,24,24)t.BackgroundTransparency=0.660;t.Position=UDim2.new(0,0,0.454706937,0)t.Size=UDim2.new(0.0650164187,0,0.0888099447,0)t.Font=Enum.Font.SourceSans;t.Text="Toggle"t.TextColor3=Color3.fromRGB(75,0,130)t.TextSize=24.000;t.TextXAlignment=Enum.TextXAlignment.Left;t.MouseButton1Click:connect(function()q:ToggleUI()end)
+local v = r:NewTab("Welcome")
+local w = v:NewSection("Hello,      • 🥵"..game.Players.LocalPlayer.Name)
+local x = r:NewTab("Guns")
+local y = x:NewSection("Weapon")
+local z = r:NewTab("Big")
+local A = z:NewSection("Misc")
+local H = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)
+w:NewButton("Player : "..game.Players.LocalPlayer.Name.." | "..game.Players.LocalPlayer.UserId,"?",function() end)
+w:NewButton("Game : "..game.PlaceId.." | "..H.Name,"?",function()print("hi")end)
+w:NewButton("Account Age : "..game.Players.LocalPlayer.AccountAge.." | Premium : Yes","?",function()print("hi")end)
+w:NewButton("Skidded : Yes","?",function()print("hi")end)
+w:NewButton("Discord | Click To Copy","?",function()setclipboard("https://discord.gg/D6q73nefFm")end)w:NewKeybind("Ui Toggle (Key-Bind)","?",Enum.KeyCode.F,function()q:ToggleUI()end)
+local x = v:NewSection("Guns")
+
+-------------Guns-------------
+
+x:NewButton("FlameThrower","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "flamethrower",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+x:NewButton("Sniper","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "Sniper",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+x:NewButton("taser","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "taser",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+x:NewButton("Glock","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "glock",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+x:NewButton("Rocket Launcher","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "rocketlauncher",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+x:NewButton("Rocket Launcher","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "rocketlauncher",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+x:NewButton("Old Deag","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "olddeag",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+x:NewButton("Rocket Launcher","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "rocketlauncher",
+    [3] = "none"
+   }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+x:NewButton("Minigun","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "minigun",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+x:NewButton("shotgun","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "shotgun",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+local y = v:NewSection("Weapon")
+-------------------Weapon------------------------
+
+y:NewButton("Katana","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "katana",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+y:NewButton("Golf Club","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "golfclub",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+y:NewButton("Dagger","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "dagger",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+y:NewButton("Claws","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "claws",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+y:NewButton("Guitar","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "guitar",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+y:NewButton("Spiked Clubs","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "spikedclub",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+y:NewButton("Axe","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "axe",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+y:NewButton("Machete","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "machete",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+
+y:NewButton("Candy Cane","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "candycane",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+--------Big-----------
+local z = v:NewSection("Big")
+
+y:NewButton("Stop axe","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "stopaxe",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+y:NewButton("Sucker","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "sucker",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+---------Misc----------
+local A = v:NewSection("Misc")
+
+A:NewButton("Ender Peal","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "guitar",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+A:NewButton("Candy bucket","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "candy",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+A:NewButton("Boombox","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "Boombox",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+A:NewButton("Molotov","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "motolov",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+A:NewButton("cheetos","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "Cheetos",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+A:NewButton("Body Pillow","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "pillow",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+y:NewButton("Turkey","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "pillow",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+y:NewButton("medkit","?",function()
+local args = {
+    [1] = "changeClass",
+    [2] = "medkit",
+    [3] = "none"
+    }
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+
+
+
+
+
+
+
