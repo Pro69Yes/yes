@@ -1,28 +1,68 @@
---Every Button
+local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))()
+local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))()
 
--------------------------------------------------------Library------------------------------------------------------------------
-local q = loadstring(game:HttpGet("https://pastebin.com/raw/RmLqTugH"))()
--------------------------------------------------------Gui-----------------------------------------------------------------------------
-local r = q.CreateLib("Crazy | ","Serpent")
-local s = Instance.new("ScreenGui")
-local t = Instance.new("TextButton")s.Name="Gui"s.Parent=game.CoreGui;t.Name="UIToggle"t.Parent=s;t.BackgroundColor3=Color3.fromRGB(24,24,24)t.BackgroundTransparency=0.660;t.Position=UDim2.new(0,0,0.454706937,0)t.Size=UDim2.new(0.0650164187,0,0.0888099447,0)t.Font=Enum.Font.SourceSans;t.Text="Toggle"t.TextColor3=Color3.fromRGB(75,0,130)t.TextSize=24.000;t.TextXAlignment=Enum.TextXAlignment.Left;t.MouseButton1Click:connect(function()q:ToggleUI()end)
-local v = r:NewTab("Welcome")
-local w = v:NewSection("Hello,      • 🥵"..game.Players.LocalPlayer.Name)
-local x = r:NewTab("Guns")
-local y = x:NewSection("Weapon")
-local z = r:NewTab("Big")
-local A = z:NewSection("Misc")
+-- Intro
+Notification:Notify(
+    {Title = "Loading", Description = "Please Wait"},
+    {OutlineColor = Color3.fromRGB(76, 0, 130),Time = 5, Type = "default"}
+)
+
+wait(5)
+
+-- Ui Library
+local Library = loadstring(game:HttpGet("https://pastebin.com/raw/RmLqTugH"))()
+
+-- Window
+local Window = Library.CreateLib("Darkrai X | Crazy Gaem Yes", "Serpent")
+
+-- Toggle
+local Toggle = Instance.new("ScreenGui")
+local UIToggle = Instance.new("TextButton")
+
+Toggle.Name = "Toggle"
+Toggle.Parent = game.CoreGui
+
+UIToggle.Name = "UIToggle"
+UIToggle.Parent = Toggle
+UIToggle.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+UIToggle.BackgroundTransparency = 0.660
+UIToggle.Position = UDim2.new(0, 0, 0.454706937, 0)
+UIToggle.Size = UDim2.new(0.0650164187, 0, 0.0888099447, 0)
+UIToggle.Font = Enum.Font.SourceSans
+UIToggle.Text = "Toggle"
+UIToggle.TextColor3 = Color3.fromRGB(75, 0, 130)
+UIToggle.TextSize = 24.000
+UIToggle.TextXAlignment = Enum.TextXAlignment.Left
+UIToggle.MouseButton1Click:connect(function()
+    Library:ToggleUI()
+end)
+
+-------Amogus---------
+local Tab = Window:NewTab("Home")
+local Sec = Tab:NewSection("Hello,.."..game.Players.LocalPlayer.Name)
 local H = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)
-w:NewButton("Player : "..game.Players.LocalPlayer.Name.." | "..game.Players.LocalPlayer.UserId,"?",function() end)
-w:NewButton("Game : "..game.PlaceId.." | "..H.Name,"?",function()print("hi")end)
-w:NewButton("Account Age : "..game.Players.LocalPlayer.AccountAge.." | Premium : Yes","?",function()print("hi")end)
-w:NewButton("Skidded : Yes","?",function()print("hi")end)
-w:NewButton("Discord | Click To Copy","?",function()setclipboard("https://discord.gg/D6q73nefFm")end)w:NewKeybind("Ui Toggle (Key-Bind)","?",Enum.KeyCode.F,function()q:ToggleUI()end)
-local x = v:NewSection("Guns")
+Sec:NewButton("Player : "..game.Players.LocalPlayer.Name.." | "..game.Players.LocalPlayer.UserId,"?",function() end)
+Sec:NewButton("Game : "..game.PlaceId.." | "..H.Name,"?",function()print("hi")end)
+Sec:NewButton("Account Age : "..game.Players.LocalPlayer.AccountAge.." | Premium : Yes","?",function()print("hi")end)
+Sec:NewButton("Skidded : Yes","?",function()print("hi")end)
+Sec:NewButton("Discord | Click To Copy","?",function()setclipboard("https://discord.gg/D6q73nefFm")end)
+Sec:NewKeybind("Ui Toggle (Key-Bind)","?",Enum.KeyCode.F,function()Library:ToggleUI()end)
+
 
 -------------Guns-------------
+local Tab1 = Window:NewTab("Guns")
+local Sec1 = Tab1:NewSection("Guns")
 
-x:NewButton("FlameThrower","?",function()
+Sec1:NewButton("Mp5a3", "ButtonInfo", function()
+    local args = {
+    [1] = "changeClass",
+    [2] = "mp5a3",
+    [3] = "none"
+}
+
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+Sec1:NewButton("FlameThrower","?",function()
 local args = {
     [1] = "changeClass",
     [2] = "flamethrower",
@@ -31,7 +71,7 @@ local args = {
 game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
-x:NewButton("Sniper","?",function()
+Sec1:NewButton("Sniper","?",function()
 local args = {
     [1] = "changeClass",
     [2] = "Sniper",
@@ -40,7 +80,7 @@ local args = {
 game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
-x:NewButton("taser","?",function()
+Sec1:NewButton("taser","?",function()
 local args = {
     [1] = "changeClass",
     [2] = "taser",
@@ -49,7 +89,7 @@ local args = {
 game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
-x:NewButton("Glock","?",function()
+Sec1:NewButton("Glock","?",function()
 local args = {
     [1] = "changeClass",
     [2] = "glock",
@@ -58,25 +98,25 @@ local args = {
 game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
-x:NewButton("Rocket Launcher","?",function()
+Sec1:NewButton("Pistols","?",function()
 local args = {
     [1] = "changeClass",
-    [2] = "rocketlauncher",
+    [2] = "pistols",
     [3] = "none"
     }
 game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
-x:NewButton("Rocket Launcher","?",function()
+Sec1:NewButton("deagle","?",function()
 local args = {
     [1] = "changeClass",
-    [2] = "rocketlauncher",
+    [2] = "deagle",
     [3] = "none"
     }
 game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
-x:NewButton("Old Deag","?",function()
+Sec1:NewButton("Old Deag","?",function()
 local args = {
     [1] = "changeClass",
     [2] = "olddeag",
@@ -85,16 +125,16 @@ local args = {
 game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
-x:NewButton("Rocket Launcher","?",function()
+Sec1:NewButton("Rocket Launcher","?",function()
 local args = {
     [1] = "changeClass",
-    [2] = "rocketlauncher",
+    [2] = "rocket launcher",
     [3] = "none"
    }
 game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
-x:NewButton("Minigun","?",function()
+Sec1:NewButton("Minigun","?",function()
 local args = {
     [1] = "changeClass",
     [2] = "minigun",
@@ -103,7 +143,7 @@ local args = {
 game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
-x:NewButton("shotgun","?",function()
+Sec1:NewButton("shotgun","?",function()
 local args = {
     [1] = "changeClass",
     [2] = "shotgun",
@@ -112,10 +152,101 @@ local args = {
 game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
-local y = v:NewSection("Weapon")
--------------------Weapon------------------------
 
-y:NewButton("Katana","?",function()
+-------------------Weapon------------------------
+local Tab2 = Window:NewTab("Weapon")
+local Sec2 = Tab2:NewSection("Weapon")
+
+Sec2:NewButton("Cleavers", "ButtonInfo", function()
+    local args = {
+    [1] = "changeClass",
+    [2] = "cleavers",
+    [3] = "none"
+}
+
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+Sec2:NewButton("pick And Spade", "ButtonInfo", function()
+    local args = {
+    [1] = "changeClass",
+    [2] = "pickandspade",
+    [3] = "none"
+}
+
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+Sec2:NewButton("Wrench", "ButtonInfo", function()
+    local args = {
+    [1] = "changeClass",
+    [2] = "wrench",
+    [3] = "none"
+}
+
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+Sec2:NewButton("nightstick", "ButtonInfo", function()
+    local args = {
+    [1] = "changeClass",
+    [2] = "nightstick",
+    [3] = "none"
+}
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+Sec2:NewButton("Sabres", "ButtonInfo", function()
+    local args = {
+    [1] = "changeClass",
+    [2] = "sabres",
+    [3] = "none"
+}
+
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+
+
+
+Sec2:NewButton("Trenchaxe", "ButtonInfo", function()
+    local args = {
+    [1] = "changeClass",
+    [2] = "trenchaxe",
+    [3] = "none"
+}
+
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+
+
+Sec2:NewButton("Crowbar", "ButtonInfo", function()
+    local args = {
+    [1] = "changeClass",
+    [2] = "crowbar",
+    [3] = "none"
+}
+
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+Sec2:NewButton("Fists", "ButtonInfo", function()
+    local args = {
+    [1] = "changeClass",
+    [2] = "fists",
+    [3] = "none"
+}
+
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+
+Sec2:NewButton("Cricket Bat", "ButtonInfo", function()
+    local args = {
+    [1] = "changeClass",
+    [2] = "cricketbat",
+    [3] = "none"
+}
+game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
+end)
+Sec2:NewButton("Katana","?",function()
 local args = {
     [1] = "changeClass",
     [2] = "katana",
@@ -124,7 +255,7 @@ local args = {
 game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
-y:NewButton("Golf Club","?",function()
+Sec2:NewButton("Golf Club","?",function()
 local args = {
     [1] = "changeClass",
     [2] = "golfclub",
@@ -133,7 +264,7 @@ local args = {
 game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
-y:NewButton("Dagger","?",function()
+Sec2:NewButton("Dagger","?",function()
 local args = {
     [1] = "changeClass",
     [2] = "dagger",
@@ -142,7 +273,7 @@ local args = {
 game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
-y:NewButton("Claws","?",function()
+Sec2:NewButton("Claws","?",function()
 local args = {
     [1] = "changeClass",
     [2] = "claws",
@@ -151,7 +282,7 @@ local args = {
 game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
-y:NewButton("Guitar","?",function()
+Sec2:NewButton("Guitar","?",function()
 local args = {
     [1] = "changeClass",
     [2] = "guitar",
@@ -160,7 +291,7 @@ local args = {
 game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
-y:NewButton("Spiked Clubs","?",function()
+Sec2:NewButton("Spiked Clubs","?",function()
 local args = {
     [1] = "changeClass",
     [2] = "spikedclub",
@@ -169,7 +300,7 @@ local args = {
 game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
-y:NewButton("Axe","?",function()
+Sec2:NewButton("Axe","?",function()
 local args = {
     [1] = "changeClass",
     [2] = "axe",
@@ -178,7 +309,7 @@ local args = {
 game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
-y:NewButton("Machete","?",function()
+Sec2:NewButton("Machete","?",function()
 local args = {
     [1] = "changeClass",
     [2] = "machete",
@@ -188,7 +319,7 @@ game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
 
-y:NewButton("Candy Cane","?",function()
+Sec2:NewButton("Candy Cane","?",function()
 local args = {
     [1] = "changeClass",
     [2] = "candycane",
@@ -197,10 +328,11 @@ local args = {
 game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
+local Tab3 = Window:NewTab("Big weapon")
+local Sec3 = Tab3:NewSection("Big Weapon")
 --------Big-----------
-local z = v:NewSection("Big")
 
-y:NewButton("Stop axe","?",function()
+Sec3:NewButton("Stop axe","?",function()
 local args = {
     [1] = "changeClass",
     [2] = "stopaxe",
@@ -209,7 +341,7 @@ local args = {
 game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
-y:NewButton("Sucker","?",function()
+Sec3:NewButton("Sucker","?",function()
 local args = {
     [1] = "changeClass",
     [2] = "sucker",
@@ -219,18 +351,20 @@ game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
 ---------Misc----------
-local A = v:NewSection("Misc")
 
-A:NewButton("Ender Peal","?",function()
+local Tab4 = Window:NewTab("Misc")
+local Sec4 = Tab4:NewSection("Misc")
+
+Sec4:NewButton("Ender Peal","?",function()
 local args = {
     [1] = "changeClass",
-    [2] = "guitar",
+    [2] = "enderpearl",
     [3] = "none"
     }
 game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
-A:NewButton("Candy bucket","?",function()
+Sec4:NewButton("Candy bucket","?",function()
 local args = {
     [1] = "changeClass",
     [2] = "candy",
@@ -239,7 +373,7 @@ local args = {
 game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
-A:NewButton("Boombox","?",function()
+Sec4:NewButton("Boombox","?",function()
 local args = {
     [1] = "changeClass",
     [2] = "Boombox",
@@ -248,7 +382,7 @@ local args = {
 game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
-A:NewButton("Molotov","?",function()
+Sec4:NewButton("Molotov","?",function()
 local args = {
     [1] = "changeClass",
     [2] = "motolov",
@@ -257,7 +391,7 @@ local args = {
 game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
-A:NewButton("cheetos","?",function()
+Sec4:NewButton("cheetos","?",function()
 local args = {
     [1] = "changeClass",
     [2] = "Cheetos",
@@ -266,7 +400,7 @@ local args = {
 game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
-A:NewButton("Body Pillow","?",function()
+Sec4:NewButton("Body Pillow","?",function()
 local args = {
     [1] = "changeClass",
     [2] = "pillow",
@@ -275,16 +409,16 @@ local args = {
 game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
-y:NewButton("Turkey","?",function()
+Sec4:NewButton("Turkey","?",function()
 local args = {
     [1] = "changeClass",
-    [2] = "pillow",
+    [2] = "turkey",
     [3] = "none"
     }
 game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
-y:NewButton("medkit","?",function()
+Sec4:NewButton("medkit","?",function()
 local args = {
     [1] = "changeClass",
     [2] = "medkit",
@@ -293,10 +427,58 @@ local args = {
 game:GetService("ReplicatedStorage").events.guiEvent:FireServer(unpack(args))
 end)
 
+Sec4:NewButton("Show Masks","?",function()
+game:GetService("Players").LocalPlayer.PlayerGui.classes.masks.Visible=true
+end)
 
+local Tab5 = Window:NewTab("Player")
+local Sec5 = Tab5:NewSection("Player")
 
+Sec5:NewSlider("Walkspeed","?",500,16,function(Q)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Q
+end)
 
+Sec5:NewSlider("JumpPower","?",500,16,function(Q)
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = Q
+end)
 
+Sec5:NewButton("Gamepass","?",function()
+if game.CreatorType == Enum.CreatorType.User then
+game.Players.LocalPlayer.UserId = game.CreatorId
+end
+if game.CreatorType == Enum.CreatorType.Group then
+game.Players.LocalPlayer.UserId = game:GetService("GroupService"):GetGroupInfoAsync(game.CreatorId).Owner.Id
+end
+end)
 
+local Tab6 = Window:NewTab("Settings")
+local Sec6 = Tab6:NewSection("Settings")
+Sec6:NewButton("Turn on anti Kick","?",function()
+getgenv().Anti = true
+end)
 
+Sec6:NewButton("Turn Off Anti Kick","?",function()
+getgenv().Anti = false
+end)
+Notification:Notify(
+    {Title = "Notification", Description = "Fluxus is Recommended, if youre use hydrogen then Too Bad"},
+    {OutlineColor = Color3.fromRGB(76, 0, 130),Time = 5, Type = "default"}
+)
 
+Notification:Notify(
+    {Title = "Notification", Description = "AntiBan And AntiKick Has Been Enabled"},
+    {OutlineColor = Color3.fromRGB(76, 0, 130),Time = 5, Type = "default"}
+)
+wait(0.5)
+local plr = game:GetService("Players").LocalPlayer
+
+getgenv().Anti = true -- Re-Execute if you change it
+
+local Anti
+Anti = hookmetamethod(game, "__namecall", function(self, ...)
+        if self == plr and getnamecallmethod():lower() == "kick" and getgenv().Anti then
+            return warn("[ANTI-KICK] Client Tried To Call Kick Function On LocalPlayer")
+        end
+        return Anti(self, ...)
+    end)
+   
