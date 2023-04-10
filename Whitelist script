@@ -1,0 +1,5 @@
+local whitelist = {
+  ["legend_982192"] = true,
+  ["l0weexwzfbp7kiqyksx0"] = true,
+  ["Amogus60s"] = true,
+}
